@@ -11,7 +11,7 @@ if __name__ = "__main__":
     product = mul(a, b)
     quotient = div(a ,b)
 
-    print('{:d} + {:d} = {:d}'.format(a, b, addition)))
-    print('{:d} - {:d} = {:d}'.format(a, b, difference)))
-    print('{:d} * {:d} = {:d}'.format(a, b, product)))
-    print('{:d} / {:d} = {:d}'.format(a, b, quotient)))
+    print('{:d} + {:d} = {:d}'.format(a, b, addition))
+    print('{:d} - {:d} = {:d}'.format(a, b, difference))
+    print('{:d} * {:d} = {:d}'.format(a, b, product))
+    print('{:d} / {:d} = {:d}'.format(a, b, quotient))
