@@ -7,5 +7,5 @@ if __name__ == "__main__":
 
     total_args = 0
     for i in range(no_of_args):
-        total_args += (sys.argv[i + 1])
+        total_args += int((sys.argv[i + 1]))
     print(f"{total_args}")
