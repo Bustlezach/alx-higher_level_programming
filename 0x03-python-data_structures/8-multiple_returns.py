@@ -3,7 +3,6 @@
 def multiple_returns(sentence):
     
     length = len(sentence.strip())
-    first = ""
 
     if length == 0:
         first = None

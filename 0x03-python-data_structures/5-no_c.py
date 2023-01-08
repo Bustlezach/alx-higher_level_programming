@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-new_string = ''
 def no_c(my_string):
+    new_string = ''
     for chr in my_string:
         if ((chr != 'C') and (chr != 'c')):
             new_string += chr
