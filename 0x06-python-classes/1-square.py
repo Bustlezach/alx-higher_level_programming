@@ -6,3 +6,4 @@ class Square:
         """size contractor"""
 
         self.__size =size
+        """private attribute of square class"""
