@@ -8,7 +8,13 @@ class Square:
         """Initialization of contractor args value to zero on default"""
 
         if not isinstance(size, int):
-            """check if args exists in the class attribute"""
+            """Initializing this square class
+        Args:
+            size: represnets the size of the square defined
+        Raises:
+            TypeError: if size is not integer
+            ValueError: if size is less than zero
+        """
 
             raise TypeError('size must be integer')
         if size < 0:
