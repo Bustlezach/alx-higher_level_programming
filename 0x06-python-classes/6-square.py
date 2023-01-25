@@ -1,8 +1,16 @@
 #!/usr/bin/python3
-
+# 6-square.py
+"""A module that defines a square """
 
 class Square:
+    """A square class"""
+
     def __init__(self, size=0, position=(0, 0)):
+        """Create a Square
+        Args:
+            size: length of a side of Square
+            position: where the square is (coordinates)
+        """
         self.size = size
         self.position = position
 
@@ -11,6 +19,12 @@ class Square:
 
     @property
     def size(self):
+        """"The propery of size as the len of a side of Square
+        Raises:
+            TypeError: if size != int
+            ValueError: if size < 0
+        """
+
         return self.__size
 
     @size.setter
@@ -23,10 +37,18 @@ class Square:
 
     @property
     def position(self):
+        """
+        property of the coordinates of this Square
+        Raises:
+            TypeError: if value != a tuple of 2 integers < 0
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Get the area of a Square
+        Returns: The size squared
+        """
         if not isinstance(value, tuple):
             raise TypeError('position must be a tuple of 2 positive integers')
         if len(value) != 2:
@@ -36,9 +58,15 @@ class Square:
         self.__position = value
 
     def area(self):
+        """
+        Get the area of a Square
+        Returns: The size squared
+        """
+
         return self.__size * self.__size
 
     def pos_print(self):
+        """returns the position space"""
         pos = ""
         if self.size == 0:
             return "\n"
@@ -53,5 +81,6 @@ class Square:
         return pos
 
     def my_print(self):
+        """print the square in position"""
         print(self.pos_print(), end='')
 
