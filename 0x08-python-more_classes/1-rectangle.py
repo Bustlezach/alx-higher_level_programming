@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """A class that defines a rectangle"""
 
+
 class Rectangle:
-    """A simple rectangle class"""
+    """this represents a rectangle"""
+
     def __init__(self, width=0, height=0):
-        """
-        This contructor initializer,
-        have width and height default value of zero
-        for objects of this class
+        """Initializing this rectangle class
         Args:
             width: represents the width of the rectangle
             height: represents the height of the rectangle
@@ -20,13 +19,13 @@ class Rectangle:
 
     @property
     def width(self):
-        """This method makes width private and behaves as the getter"""
+        """retrieves width attribute"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """A setter to capture a new value for width"""
-        if not isinstance(value, int)
+        """sets width attribute"""
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -40,7 +39,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """sets height attribute"""
-        if not isinstance(value, int)
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
