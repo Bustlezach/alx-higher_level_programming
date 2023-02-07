@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""This module defines a file-appending function."""
+"""Checks if object is an instance of a class"""
 
 
-def append_write(filename="", text=""):
+def is_same_class(obj, a_class):
+    """Return true if object is an instance of the
+    class, otherwise return false
     """
-    Appends a string to the end of a UTF8 text file.
-    """
-    with open(filename, "a", encoding="utf-8") as f:
-        return f.write(text)
+    return (type(obj) == a_class)
