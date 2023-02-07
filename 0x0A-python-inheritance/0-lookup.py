@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-    The list of attributes and methods of an object
-    is returned ny this module
+    This module returns the list of available attributes
+    and methods of an object
 """
+
 
 def lookup(obj):
     """This functions looks out for all attributes and methods of an object"""
