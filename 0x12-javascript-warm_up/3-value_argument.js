@@ -2,9 +2,8 @@
 
 // Print the values of argv except undefined.
 
-const val = process.agrv[2];
-if (typeof val === `undefined`) {
+if (typeof process.argv[2] === `undefined`) {
   console.log("No argument");
 } else {
-  console.log(`${val}`);
+  console.log(process.argv[2]);
 };
