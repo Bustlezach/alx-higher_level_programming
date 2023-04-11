@@ -4,8 +4,12 @@
 
 const val = process.agrv;
 const len = val.length;
-if (len <= 2) {
+if (len === 2) {
   console.log("No argument");
 } else {
-  console.log("Argument found");
+  if (len === 3){
+	  console.log('Argument found');
+  } else{
+	  console.log('Argument found');
+  }
 };
