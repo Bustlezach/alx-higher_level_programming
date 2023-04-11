@@ -4,8 +4,4 @@
 //if the first argument can be converted to an integer
 
 const val = Math.floor(Number(process.agrv[2]));
-if (isNaN(val)){
-        console.log(`Not a number`);
-} else{
-        console.log(`My number: ${val}`);
-};
+console.log(isNaN(val) ? `Not a number` : `My number: ${val}`);
