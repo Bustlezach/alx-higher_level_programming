@@ -4,6 +4,6 @@
 
 const myString = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-myString.forEach(str => {
+for(let i = 0; i < myString.length; i++) {
         console.log(str);
-});
+};

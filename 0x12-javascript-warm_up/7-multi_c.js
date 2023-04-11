@@ -2,12 +2,11 @@
 
 // This script prints x times “C is fun”
 
-let x = Math.floor(Number(process.argv[2]));
+const x = Math.floor(Number(process.argv[2]));
 if (isNaN(x)) {
   console.log("Missing number of occurrences");
 } else {
-  while (x != 0) {
+  for (let i = 0; i < x; i++) {
     console.log("C is fun");
-    x -= 1;
   }
 }
