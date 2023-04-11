@@ -6,7 +6,5 @@ const vals = process.agrv;
 if (vals[2] === undefined) {
   console.log("No argument");
 } else {
-  vals.forEach((val) => {
-    console.log(val);
-  });
+  console.log(`${vals[2]}`);
 };
