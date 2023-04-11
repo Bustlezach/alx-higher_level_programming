@@ -1,7 +1,9 @@
 #!/usr/bin/node
 
+// This script prints prints 3 lines using loop
 
-const vals = process.agrv;
-vals.forEach(val => {
-        console.log(val);
+const myString = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+
+myString.forEach(str => {
+        console.log(str);
 });
