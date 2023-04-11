@@ -5,5 +5,5 @@
 const myString = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
 for(let i = 0; i < myString.length; i++) {
-        console.log(str);
+        console.log(myString[i]);
 };
