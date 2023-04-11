@@ -7,6 +7,5 @@
 * the value of myVar to the console using the console.log() function.
 */
 
-const myVar;
-myVar = 'JavaScript is amazing';
+const myVar = 'JavaScript is amazing';
 console.log(myVar);
