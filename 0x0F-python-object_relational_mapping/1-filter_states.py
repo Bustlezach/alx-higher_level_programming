@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     """Create a cursor object and execute a query to retrieve all states"""
     cursor = db_conn.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id ASC")
     state_rows = cursor.fetchall()
 
     """Loop through each row and print it to the console"""
