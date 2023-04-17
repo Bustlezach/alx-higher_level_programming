@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-Created on Sat Aug  8 09:05:11 2020
-
-@author: Robinson Montes
+This script connects to a MySQL database and retrieves all cities and their corresponding state names,
+and then prints them to the console.
 """
+
 import MySQLdb
 import sys
 
@@ -15,16 +15,16 @@ if __name__ == '__main__':
         exit(1)
     username = args[1]
     password = args[2]
-    data = args[3]
+    database = args[3]
     db = MySQLdb.connect(host='localhost', user=username,
-                         passwd=password, db=data, port=3306)
-    cur = db.cursor()
-    num_rows = cur.execute("SELECT cities.id, cities.name, states.name\
+                         password=password, db=database, port=3306)
+    cursor = db.cursor()
+    num_rows = cursor.execute("SELECT cities.id, cities.name, states.name\
                            FROM cities INNER JOIN states\
                            ON cities.state_id=states.id\
                            ORDER BY cities.id;")
-    rows = cur.fetchall()
+    rows = cursor.fetchall()
     for row in rows:
         print(row)
-    cur.close()
+    cursor.close()
     db.close()
