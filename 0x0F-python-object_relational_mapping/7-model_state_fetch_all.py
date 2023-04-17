@@ -19,6 +19,8 @@ if __name__ == '__main__':
     password = arguments[2]
     data = arguments[3]
 
+    # connect to the database and get a state from the database.
+
     engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{data}")
     Session = sessionmaker(bind=engine)
     session = Session()
