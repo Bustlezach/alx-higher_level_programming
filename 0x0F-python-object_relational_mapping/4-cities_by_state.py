@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-This script connects to a MySQL database and retrieves all cities and their corresponding state names,
-and then prints them to the console.
-"""
+
 
 import MySQLdb
 import sys
