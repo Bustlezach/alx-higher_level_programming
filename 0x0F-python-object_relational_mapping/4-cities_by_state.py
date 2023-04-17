@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     """Create a cursor object and execute a query to retrieve all states"""
     cursor = db_conn.cursor()
-    cursor.execute("SELECT states.name, cities.id, cities.name FROM cities INNER JOIN states ON cities.state_id=states.id ORDER BY cities.id ASC")
+    number_row = cursor.execute("SELECT states.name, cities.id, cities.name FROM cities INNER JOIN states ON cities.state_id=states.id ORDER BY cities.id ASC;")
     city_rows = cursor.fetchall()
 
     """Loop through each row and print it to the console"""
