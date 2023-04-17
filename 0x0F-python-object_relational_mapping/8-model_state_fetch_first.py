@@ -19,13 +19,15 @@ if __name__ == '__main__':
     password = arguments[2]
     data = arguments[3]
 
-    # connect to the database and get a state from the database.
-
+    # Connect to the database and get a state from the database.
     engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{data}")
     Session = sessionmaker(bind=engine)
     session = Session()
+
+    instance = session.query(State).first()
 
     if instance is None:
         print('Nothing')
     else:
         print(f"{instance.id}: {instance.name}")
+
