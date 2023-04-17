@@ -9,13 +9,17 @@ import sys
 
 
 if __name__ == '__main__':
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    
     """Establish a connection to the MySQL database"""
     db_conn = MySQLdb.connect(
         host="localhost",
-        user=sys.argv[1],
-        password=sys.argv[2],
+        user=username,
+        password=password,
         port=3306,
-        db=sys.argv[3]
+        db=database
     )
 
     """Create a cursor object and execute a query to retrieve all states"""
