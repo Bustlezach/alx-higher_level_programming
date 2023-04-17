@@ -34,3 +34,6 @@ if __name__ == '__main__':
     """Loop through each row and print it to the console"""
     for city in city_rows:
         print(city)
+
+    cursor.close()
+    db_conn.close()
