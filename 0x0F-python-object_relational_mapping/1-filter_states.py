@@ -26,3 +26,4 @@ if __name__ == '__main__':
     """Loop through each row and print it to the console"""
     for state in state_rows:
         print(state)
+
