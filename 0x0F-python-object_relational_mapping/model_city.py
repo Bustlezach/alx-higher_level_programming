@@ -4,8 +4,7 @@ This script defines a State class and
 a Base class to work with MySQLAlchemy ORM.
 """
 
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base, State
 
 
@@ -22,5 +21,5 @@ class City(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, ForeignKey('States.id')
+    state_id = Column(Integer, nullable=False, ForeignKey('states.id')
 
