@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This script accesses a MySQL database and retrieves states in the argument.
+This script accesses a MySQL database and it truncates the result where necessary.
 """
 
 import MySQLdb
@@ -9,6 +9,10 @@ import sys
 
 
 if __name__ == '__main__':
+    arguments = sys.argv
+    if (len(arguments) != 5):
+        print("Usage: {} <state_name>".format(sys.argv[0]))
+        exit(1)
     """Establish a connection to the MySQL database"""
     db_conn = MySQLdb.connect(
         host="localhost",
@@ -20,7 +24,7 @@ if __name__ == '__main__':
 
     """Create a cursor object and execute a query to retrieve all states"""
     cursor = db_conn.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC".format(sys.argv[4]))
+    cursor.execute("SELECT * FROM states WHERE states.name LIKE BINARY %s ORDER BY states.id;", (sys.argv[4],))
     state_rows = cursor.fetchall()
 
     """Loop through each row and print it to the console"""
