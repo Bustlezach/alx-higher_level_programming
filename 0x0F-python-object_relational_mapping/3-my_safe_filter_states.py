@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-This script accesses a MySQL database and it truncates the result where necessary.
+This script lists all cities from
+the database `hbtn_0e_4_usa`.
 """
 
 import MySQLdb
