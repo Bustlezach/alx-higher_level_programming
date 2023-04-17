@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-This script lists all states with
-a `name` starting with the letter `N`
-from the database `hbtn_0e_0_usa`.
+This script connects to a MySQL database and retrieves the states that match the given name, and prints them to the console.
 """
 
 import MySQLdb
