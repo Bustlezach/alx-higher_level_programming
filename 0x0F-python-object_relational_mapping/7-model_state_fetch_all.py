@@ -3,12 +3,13 @@
 This script lists all State objects from the database hbtn_0e_6_usa
 """
 
-from sqlalchemy import (create_engine)
+import sys
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-import sys
 
-if __name__ = '__main__':
+
+if __name__ == '__main__':
     arguments = sys.argv
     if len(arguments) != 4:
         print(f"Usage: {arguments[0]} username password db_name")
@@ -21,5 +22,6 @@ if __name__ = '__main__':
     engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{data}")
     Session = sessionmaker(bind=engine)
     session = Session()
+
     for state in session.query(State).order_by(State.id):
         print(f"{state.id}: {state.name}")
