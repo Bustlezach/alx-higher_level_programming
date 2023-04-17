@@ -18,10 +18,11 @@ if __name__ == '__main__':
     db_conn = MySQLdb.connect(host='localhost', user=username,
                          password=password, db=database, port=3306)
     cursor = db_conn.cursor()
-    cursor.execute("SELECT cities.id, cities.name, states.name\
-                           FROM cities WHERE LIKE BINARY '{}'\
-                           INNER JOIN states\
+    cursor.execute("SELECT cities.id, cities.name\
+                           FROM cities\
+                           JOIN states\
                            ON cities.state_id=states.id\
+                           WHERE states.name LIKE BINARY '{}'\
                            ORDER BY cities.id ASC".format(args[4]))
     rows = cursor.fetchall()
     if rows is not None:
