@@ -9,7 +9,6 @@ if __name__ == "__main__":
     with request.urlopen(url_req) as req:
         page = req.read()
         print("Body response:")
-        print(f"\t- type: {type(page)}")
-        print(f"\t- type: {page}")
-        print(f"\t- type: {page.decode("utf-8")}")
-
+        print("\t- type: {}".format(type(page)))
+        print("\t- content: {}".format(page))
+        print("\t- utf8 content: {}".format(page.decode("utf-8")))
