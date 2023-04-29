@@ -10,7 +10,7 @@ from sys import argv
 
 if __name__ == "__main__":
     url = argv[1]
-    value = {'mail': argv[2]}
+    value = {'email': argv[2]}
     mail = parse.urlencode(value)
     data = mail.encode('ascii')
     url_req = request.Request(url, data)
