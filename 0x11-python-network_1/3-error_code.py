@@ -13,7 +13,7 @@ if __name__ == "__main__":
     url_req = request.Request(url)
     try:
         with request.urlopen(url_req) as resp:
-            print(resp.read().decode("ascii"))
+            print(resp.read().decode('utf-8'))
     except error.HTTPError as e:
         print(e.code)
 
