@@ -6,8 +6,8 @@ from urllib import request
 if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
     url_req = request.Request(url)
-    with request.urlopen(url_req) as req:
-        page = req.read()
+    with request.urlopen(url_req) as response:
+        page = response.read()
         print("Body response:")
         print("\t- type: {}".format(type(page)))
         print("\t- content: {}".format(page))
