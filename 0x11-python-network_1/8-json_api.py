@@ -3,7 +3,7 @@
 This script takes in a letter and sends a POST request to
 'http://0.0.0.0:5000/search_user' with the letter as a parameter.
 """
-from requests import post
+from requests import post, get
 from sys import argv
 
 if __name__ == "__main__":
@@ -14,11 +14,11 @@ if __name__ == "__main__":
         q = {'q': ''}
     r = post(url, params=q)
     try:
-        obj = r.json()
-        if len(obj) != 0:
-            print('[{}] {}'.format(obj['id'], obj['name']))
+        resp = r.json()
+        if resp == {}:
+            print("No result")
         else:
-            print('No result')
+            print("[{}] {}".format(resp.get("id"), resp.get("name")))
     except ValueError:
-        print('Not a valid JSON')
+        print("Not a valid JSON")
 
