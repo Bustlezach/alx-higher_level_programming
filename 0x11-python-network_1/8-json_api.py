@@ -7,14 +7,15 @@ from requests import post, get
 
 if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
-    letter = ""
-    if len(argv) > 1:
+    if argv[1] is not None:
         letter = argv[1]
+    else:
+        letter = ""
     q = {'q': letter}
     r = post(url, params=q)
     try:
         obj = r.json()
-        if obj == {}
+        if obj == {}:
             print('No result')
         else:
             print('[{}] {}'.format(obj.get('id'), obj.get('name')))
