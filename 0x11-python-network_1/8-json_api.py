@@ -8,9 +8,9 @@ from requests import post, get
 if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
     if len(argv) > 1:
-        q = {'key': argv[1]}
+        q = {'q': argv[1]}
     else:
-        q = {'key': ''}
+        q = {'q': ''}
     r = post(url, params=q)
     try:
         obj = r.json()
