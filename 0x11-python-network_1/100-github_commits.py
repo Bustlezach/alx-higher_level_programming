@@ -8,7 +8,7 @@ from requests import get
 if __name__ == "__main__":
     usr = argv[2]
     repo = argv[1]
-    url = f'https://developer.github.com/{usr}/{repo}/commits/'
+    url = f'https://api.github.com/{usr}/{repo}/commits/'
 
     r = get(url)
     obj = r.json()
