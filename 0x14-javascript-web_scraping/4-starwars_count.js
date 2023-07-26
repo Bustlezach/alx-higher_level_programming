@@ -1,19 +1,17 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = "https://swapi-api.alx-tools.com/api/films/";
+const apiUrl = process.argv[2];
+const characterId = 18;
 
 const message = function (error, response, body) {
-    if (error) {
-        console.error(error);
-    } else {
-        const res = JSON.parse(body).results;
-        console.log(
-            res.reduce((count, movie) => {
-                return movie.characters.some((character) => character.endsWith('/18/')) ? count + 1 : count;
-            }, 0)
-        );
-    }
+  if (error) {
+    console.error(error);
+  } else {
+    const films = JSON.parse(body).results;
+    const count = films.filter((film) => film.characters.includes(apiUrl + 'people/' + characterId + '/')).length;
+    console.log(count);
+  }
 };
 
-request(url, message);
+request(apiUrl, message);
